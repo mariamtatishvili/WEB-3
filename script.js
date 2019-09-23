@@ -12,7 +12,8 @@ function Book (title, author, genre, releaseDate) {
 	this.getTitle() = function () {
 	return this.title;
 }
-
+        // DAVIT: this.isNew = function() {...}
+	// () is extra with isNew(). Same is true with the rest object methods below.
 	this.isNew () = function () {
 
 	if (this.releaseDate.getFullYear() >= 2001) {
@@ -49,3 +50,12 @@ function Fantasy (title, author, genre, releaseDate, magicalCreatures, happyEndi
 		console.log (Book.getInfo() + )
 	}
 }
+			     
+// DAVIT: To make Fantasy a child of Book you need to add these two:
+Fantasy.prototype = Object.create(Book.prototype);
+
+Object.defineProperty(Fantasy.prototype, 'constructor', {
+    value: Fantasy,
+    enumerable: false,
+    writable: true
+})
