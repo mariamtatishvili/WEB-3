@@ -19,7 +19,8 @@
   <input type="text" name="genre">
 </div>
  
- <div>
+ <div>	 
+  <!--DAVIT: Avoid inline event listeners: "onclick=...". It leads to many potential problems. Always use separate .js files.-->
   <input type='submit' value='Submit' onclick='return btnClick();'>
 
 </div>
